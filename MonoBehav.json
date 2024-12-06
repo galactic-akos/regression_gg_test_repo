@@ -1,0 +1,59 @@
+{
+    "name": "Equip Item",
+    "description": "Drag item into an empty slot",
+    "apiVersion": 17,
+    "segments": [
+        {
+            "name": "Open inventory",
+            "endCriteria": [
+                {"type": "UIPixelHash", "transient": false, "data": {}}
+            ],
+            "botAction": {
+                "type": "InputPlayback",
+                "data": {
+                    "startTime": 0.0,
+                    "inputData": {
+                        "keyboard": [
+                            {"startTime": 0.0, "endTime": 0.5, "binding": "<Keyboard>/i"}
+                        ],
+                        "mouse": []
+                    }
+                }
+            }
+        },
+        {
+            "name": "Select terraformer tool",
+            "endCriteria": [
+                {"type": "ActionComplete", "transient": false, "data": {}}
+            ],
+            "botAction": {
+                "type": "Mouse_CVImage",
+                "data": {
+                    "apiVersion": 10,
+                    "imageData": "",
+                    "actions": [
+                        {"leftButton": false, "middleButton": false, "rightButton": false, "forwardButton": false, "backButton": false, "scroll": {"x":0.0, "y":0.0}, "clickedObjectNormalizedPaths": []},
+                        {"leftButton": true, "middleButton": false, "rightButton": false, "forwardButton": false, "backButton": false, "scroll": {"x":0.0, "y":0.0}, "clickedObjectNormalizedPaths": []}
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Drag the terraformer tool into an empty slot",
+            "endCriteria": [
+                {"type": "ActionComplete", "transient": false, "data": {}}
+            ],
+            "botAction": {
+                "type": "Mouse_CVImage",
+                "data": {
+                    "apiVersion": 10,
+                    "imageData" : "",
+                    "actions": [
+                        {"leftButton": true, "middleButton": false, "rightButton": false, "forwardButton": false, "backButton": false, "scroll": {"x":0.0, "y":0.0}, "clickedObjectNormalizedPaths": []},
+                        {"leftButton": false, "middleButton": false, "rightButton": false, "forwardButton": false, "backButton": false, "scroll": {"x":0.0, "y":0.0}, "clickedObjectNormalizedPaths": []}
+                    ]
+                }
+            }
+        }
+    ]
+}
